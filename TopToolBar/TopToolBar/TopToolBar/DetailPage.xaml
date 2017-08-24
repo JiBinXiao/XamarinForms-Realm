@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopToolBar.DetailPage">
+    <ScrollView>
+        
+    
+    <StackLayout Orientation="Vertical" x:Name="Main" >
+        <Grid x:Name="TopBar"  BackgroundColor="#2196F3"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Row="0" Grid.Column="0"  x:Name="TopBarBack"  Text="&lt;" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" TextColor="White"  HorizontalOptions="Center"  />
+            <Label Grid.Row="0" Grid.Column="1"  x:Name="TopBarTitle"  Text="{Binding Text}" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" TextColor="White"  HorizontalOptions="Center" />
+        </Grid>
+
+  
+            <StackLayout >
+           
+            <Label Text="{Binding Detail}" />
+
+            <Button Text="增加数据"  Clicked="AddButton_Clicked"/>
+            <Button Text="显示数据"  Clicked="ShowButton_Clicked"/>
+            <Button Text="显示一条数据"  Clicked="ShowOneButton_Clicked"/>
+            <Button Text="增加计数器的值"  Clicked="AddOneButton_Clicked"/>
+            <Button Text="删除数据"  Clicked="DeleteButton_Clicked"/>
+            <Button Text="更新数据"  Clicked="UpdateButton_Clicked"/>
+            <Label x:Name="showData" />
+        </StackLayout>
+        
+
+      
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>

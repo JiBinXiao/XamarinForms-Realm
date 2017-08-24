@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TopToolBar"
+             x:Class="TopToolBar.MainPage">
+
+    <StackLayout Orientation="Vertical" x:Name="Main" >
+        <Grid x:Name="TopBar"  BackgroundColor="#2196F3"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <!--* 7* *便于在文字左右两端能够插入新的图片或则文字 -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+           
+            <Label Grid.Row="0" Grid.Column="1"  x:Name="TopBarTitle" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" TextColor="White"  HorizontalOptions="Center" />
+        </Grid>
+
+        <ScrollView>
+            <ListView x:Name="listView"  ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Text}" Detail="{Binding Detail}" ImageSource="{Binding ImgUrl}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </ScrollView>
+    </StackLayout>
+
+    
+</ContentPage>
